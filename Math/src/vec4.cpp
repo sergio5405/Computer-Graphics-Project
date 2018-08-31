@@ -30,6 +30,7 @@ cgmath::vec4& cgmath::vec4::operator*=(float s) {
 	y *= s;
 	z *= s;
 	w *= s;
+	return *this;
 }
 
 cgmath::vec4& cgmath::vec4::operator/=(float s) {
@@ -37,6 +38,7 @@ cgmath::vec4& cgmath::vec4::operator/=(float s) {
 	y /= s;
 	z /= s;
 	w /= s;
+	return *this;
 }
 
 cgmath::vec4& cgmath::vec4::operator+=(const vec4& v) {
@@ -44,6 +46,7 @@ cgmath::vec4& cgmath::vec4::operator+=(const vec4& v) {
 	y += v.y;
 	z += v.z;
 	w += v.w;
+	return *this;
 }
 
 cgmath::vec4& cgmath::vec4::operator-=(const vec4& v) {
@@ -51,6 +54,7 @@ cgmath::vec4& cgmath::vec4::operator-=(const vec4& v) {
 	y -= v.y;
 	z -= v.z;
 	w -= v.w;
+	return *this;
 }
 
 bool cgmath::vec4::operator==(const vec4& v) const {

@@ -25,24 +25,28 @@ cgmath::vec3& cgmath::vec3::operator*=(float s) {
 	x *= s;
 	y *= s;
 	z *= s;
+	return *this;
 }
 
 cgmath::vec3& cgmath::vec3::operator/=(float s) {
 	x /= s;
 	y /= s;
 	z /= s;
+	return *this;
 }
 
 cgmath::vec3& cgmath::vec3::operator+=(const vec3& v) {
 	x += v.x;
 	y += v.y;
 	z += v.z;
+	return *this;
 }
 
 cgmath::vec3& cgmath::vec3::operator-=(const vec3& v) {
 	x -= v.x;
 	y -= v.y;
 	z -= v.z;
+	return *this;
 }
 
 bool cgmath::vec3::operator==(const vec3& v) const {

@@ -23,7 +23,7 @@ namespace cgmath {
 		bool operator==(const vec4& v) const;
 
 		friend std::ostream& operator<<(std::ostream& os, const vec4& v) {
-			os << "(" << v.x << ", " << v.y << ", " << v.z << ")";
+			os << "(" << v.x << ", " << v.y << ", " << v.z << ", " << v.w << ")";
 			return os;
 		}
 
