@@ -3,26 +3,12 @@
 cgmath::vec4::vec4() : x(0.0f), y(0.0f), z(0.0), w(0.0) {}
 cgmath::vec4::vec4(float x, float y, float z, float w) : x(x), y(y), z(z), w(w) {}
 
-float& cgmath::vec4::operator[](int i) {
-	if (i == 0)
-		return x;
-	if (i == 1)
-		return y;
-	if (i == 2)
-		return z;
-	if (i == 3)
-		return w;
+float& cgmath::vec4::operator[](int i){
+	return (&x)[i];
 }
 
-const float& cgmath::vec4::operator[] (int i) const {
-	if (i == 0)
-		return x;
-	if (i == 1)
-		return y;
-	if (i == 2)
-		return z;
-	if (i == 3)
-		return w;
+const float& cgmath::vec4::operator[](int i) const{
+	return (&x)[i];
 }
 
 cgmath::vec4& cgmath::vec4::operator*=(float s) {

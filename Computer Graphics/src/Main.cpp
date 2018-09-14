@@ -5,7 +5,7 @@
 int main(int argc, char* argv[])
 {
 	scene_manager s;
-	s.start(argc, argv, "Hello World", 400, 400);
+	s.start(argc, argv, "Hello World", 1140, 800);
 
 	return 0;
 }

@@ -41,35 +41,27 @@ namespace cgmath{
 		}
 	};
 
-	inline vec2 operator*(vec2& v, float s) {
-		v.x = v.x * s;
-		v.y = v.y * s;
-		return v;
+	inline vec2 operator*(const vec2& v, float s) {
+		return vec2(v.x*s, v.y*s);
 	}
 
-	inline vec2 operator*(float s, vec2& v) {
-		v.x = v.x * s;
-		v.y = v.y * s;
-		return v;
+	inline vec2 operator*(float s, const vec2& v) {
+		return vec2(v.x*s, v.y*s);
 	}
 
 	inline vec2 operator/(const vec2& a, float s) {
-		vec2 c = vec2(a.x/s, a.y/s);
-		return c;
+		return vec2(a.x / s, a.y / s);
 	}
 
 	inline vec2 operator+(const vec2& a, const vec2& b) {
-		vec2 c = vec2(a.x + b.x, a.y + b.y);
-		return c;
+		return vec2(a.x + b.x, a.y + b.y);
 	}
 
 	inline vec2 operator-(const vec2& a, const vec2& b) {
-		vec2 c = vec2(a.x - b.x, a.y - b.y);
-		return c;
+		return vec2(a.x - b.x, a.y - b.y);
 	}
 
 	inline vec2 operator-(const vec2& v) {
-		vec2 c = vec2(-v.x, -v.y);
-		return c;
+		return vec2(-v.x, -v.y);
 	}
 }

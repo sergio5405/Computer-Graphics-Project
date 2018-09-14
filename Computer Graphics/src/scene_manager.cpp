@@ -6,20 +6,20 @@
 #include <GL/freeglut.h>
 
 #include "scene.h"
-#include "scene_compatibility.h"
+#include "scene_cartoon.h"
+#include "scene_nicomedes.h"
 #include "time.h"
 
 std::vector<std::unique_ptr<scene>> scene_manager::sceneList;
 int scene_manager::currentScene = -1;
 
-void scene_manager::start(int argc, char* argv[], const std::string& name, int width, int height)
-{
+void scene_manager::start(int argc, char* argv[], const std::string& name, int width, int height){
 	// Time init
 	time::init();
 
 	// Freeglut init
 	glutInit(&argc, argv);
-	glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
+	glutInitContextProfile(GLUT_CORE_PROFILE);
 	glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
 	glutInitWindowSize(width, height);
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
@@ -79,22 +79,45 @@ void scene_manager::initialize()
 	// Ejemplo de como agregar escenas al proyecto
 	//std::unique_ptr<scene> somescene(new scene_project);
 	//sceneList.push_back(std::move(somescene));
-	
-	std::unique_ptr<scene> scene1(new scene_compatibility);
+
+	std::unique_ptr<scene> scene1(new scene_nicomedes);
 	sceneList.push_back(std::move(scene1));
+
+
+	/*scene_cartoon max3iter;
+	max3iter.chaikiniter = 3;
+	std::unique_ptr<scene> scene2(&max3iter);
+	scenelist.push_back(std::move(scene2));
+
+	scene_cartoon max5iter;
+	max5iter.chaikiniter = 5;
+	std::unique_ptr<scene> scene3(&max5iter);
+	scenelist.push_back(std::move(scene3));
+
+	scene_cartoon max10iter;
+	max10iter.chaikiniter = 10;
+	std::unique_ptr<scene> scene4(&max10iter);
+	scenelist.push_back(std::move(scene4));
+
+	scene_cartoon max20Iter;
+	max20Iter.chaikinIter = 20;
+	std::unique_ptr<scene> scene5(&max20Iter);
+	sceneList.push_back(std::move(scene5));
+
+
+	std::unique_ptr<scene> scene2(new scene_primitives);
+	sceneList.push_back(std::move(scene2));*/
 
 	for (auto& s : sceneList)
 		s->init();
 
-	if (sceneList.size() > 0)
-	{
+	if (sceneList.size() > 0){
 		currentScene = 0;
 		sceneList.at(currentScene)->awake();
 	}
 }
 
-void scene_manager::mainLoop()
-{
+void scene_manager::mainLoop(){
 	time::tick();
 
 	if (currentScene >= 0)
@@ -103,26 +126,23 @@ void scene_manager::mainLoop()
 	glutSwapBuffers();
 }
 
-void scene_manager::idle()
-{
+void scene_manager::idle(){
 	glutPostRedisplay();
 }
 
-void scene_manager::cleanup()
-{
+void scene_manager::cleanup(){
 	sceneList.clear();
 	currentScene = -1;
 }
 
-void scene_manager::resize(int width, int height)
-{
-	if (currentScene >= 0)
+void scene_manager::resize(int width, int height){
+	if (currentScene >= 0) {
 		sceneList.at(currentScene)->resize(width, height);
+	}
 }
 
 void scene_manager::normalKeysDown(unsigned char key, int x, int y)
-{
-	if (key == '+')
+{	if (key == '+')
 		next();
 
 	if (key == '-')
@@ -136,20 +156,18 @@ void scene_manager::normalKeysDown(unsigned char key, int x, int y)
 		sceneList.at(currentScene)->normalKeysDown(key);
 }
 
-void scene_manager::normalKeysUp(unsigned char key, int x, int y)
-{
+void scene_manager::normalKeysUp(unsigned char key, int x, int y){
 	if (currentScene >= 0)
 		sceneList.at(currentScene)->normalKeysUp(key);
 }
 
-void scene_manager::specialKeys(int key, int x, int y)
-{
+void scene_manager::specialKeys(int key, int x, int y){
 	if (currentScene >= 0)
 		sceneList.at(currentScene)->specialKeys(key);
 }
 
-void scene_manager::passiveMotion(int x, int y)
-{
-	if (currentScene >= 0)
+void scene_manager::passiveMotion(int x, int y){
+	if (currentScene >= 0) {
 		sceneList.at(currentScene)->passiveMotion(x, y);
+	}	
 }

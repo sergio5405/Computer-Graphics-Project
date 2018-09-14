@@ -4,37 +4,35 @@ cgmath::vec2::vec2() : x(0.0f), y(0.0f) {}
 cgmath::vec2::vec2(float x, float y) : x(x), y(y) {}
 
 float& cgmath::vec2::operator[](int i) {
-	if (i == 0)
-		return x;
-	if (i == 1)
-		return y;
+	return (&x)[i];
 }
 
 const float& cgmath::vec2::operator[](int i) const {
-	if (i == 0)
-		return x;
-	if (i == 1)
-		return y;
+	return (&x)[i];
 }
 
 cgmath::vec2& cgmath::vec2::operator*=(float s) {
-	vec2 a = vec2(x*s, y*s);
-	return a;
+	x *= s;
+	y *= s;
+	return *(this);
 }
 
 cgmath::vec2& cgmath::vec2::operator/=(float s) {
-	vec2 a = vec2(x/s, y/s);
-	return a;
+	x /= s;
+	y /= s;
+	return *(this);
 }
 
 cgmath::vec2& cgmath::vec2::operator+=(const vec2& v) {
-	vec2 a = vec2(x+v.x, y+v.y);
-	return a;
+	x += v.x;
+	y += v.y;
+	return *(this);
 }
 
 cgmath::vec2& cgmath::vec2::operator-=(const vec2& v) {
-	vec2 a = vec2(x - v.x, y - v.y);
-	return a;
+	x -= v.x;
+	y -= v.y;
+	return *(this);
 }
 
 bool cgmath::vec2::operator==(const vec2& v) const {

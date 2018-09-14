@@ -24,6 +24,15 @@
     <ClCompile Include="src\scene_compatibility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\scene_primitives.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene_cartoon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene_nicomedes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\scene_manager.h">
@@ -35,5 +44,19 @@
     <ClInclude Include="include\scene_compatibility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\scene_primitives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene_cartoon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\scene_nicomedes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\maxPoints.csv">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

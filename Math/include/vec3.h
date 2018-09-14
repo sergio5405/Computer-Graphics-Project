@@ -23,62 +23,39 @@ namespace cgmath {
 		float magnitude() const;
 		void normalize();
 	
-		static float magnitude(const vec3& v) {
-			return sqrt(v.x*v.x + v.y*v.y + v.z * v.z);
-		}
+		static float magnitude(const vec3& v);
+		static vec3 normalize(const vec3& v);
 
-		static vec3 normalize(const vec3& v) {
-			float vMag = magnitude(v);
-			return vec3(v.x / vMag, v.y / vMag, v.z / vMag);
-		}
-
-		static float dot(const vec3& a, const vec3&b) {
-			return a.x * b.x + a.y * b.y + a.z * b.z;
-		}
-
-		static vec3 cross(const vec3& a, const vec3&b) {
-			return vec3(a.y * b.z - a.z * b.y, - (a.x * b.z - a.z * b.x), a.x * b.y - a.y * b.x );
-		}
+		static float dot(const vec3& a, const vec3&b);
+		static vec3 cross(const vec3& a, const vec3&b);
 
 		friend std::ostream& operator<<(std::ostream& os, const vec3& v) {
 			os << "(" << v.x << ", " << v.y << ", " << v.z << ")";
 			return os;
 		}
-
-
 	};
 
-	inline vec3 operator*(vec3& v, float s) {
-		v.x = v.x * s;
-		v.y = v.y * s;
-		v.z = v.z * s;
-		return v;
+	inline vec3 operator*(const vec3& v, float s) {
+		return vec3(v.x * s, v.y * s, v.z * s);
 	}
 
-	inline vec3 operator*(float s, vec3& v) {
-		v.x = v.x * s;
-		v.y = v.y * s;
-		v.z = v.z * s;
-		return v;
+	inline vec3 operator*(float s, const vec3& v) {
+		return vec3(v.x * s, v.y * s, v.z * s);
 	}
 
 	inline vec3 operator/(const vec3& a, float s) {
-		vec3 c = vec3(a.x / s, a.y / s, a.z/s);
-		return c;
+		return vec3(a.x / s, a.y / s, a.z / s);
 	}
 
 	inline vec3 operator+(const vec3& a, const vec3& b) {
-		vec3 c = vec3(a.x + b.x, a.y + b.y, a.z + b.z);
-		return c;
+		return vec3(a.x + b.x, a.y + b.y, a.z + b.z);
 	}
 
 	inline vec3 operator-(const vec3& a, const vec3& b) {
-		vec3 c = vec3(a.x - b.x, a.y - b.y, a.z - b.z);
-		return c;
+		return vec3(a.x - b.x, a.y - b.y, a.z - b.z);
 	}
 
 	inline vec3 operator-(const vec3& v) {
-		vec3 c = vec3(-v.x, -v.y, -v.z);
-		return c;
+		return vec3(-v.x, -v.y, -v.z);
 	}
 }
