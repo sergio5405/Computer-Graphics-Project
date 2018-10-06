@@ -56,10 +56,15 @@
   <ItemGroup>
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\scene_cartoon.cpp" />
+    <ClCompile Include="src\scene_circle.cpp" />
+    <ClCompile Include="src\scene_circle_grid.cpp" />
     <ClCompile Include="src\scene_compatibility.cpp" />
+    <ClCompile Include="src\scene_fragment.cpp" />
     <ClCompile Include="src\scene_manager.cpp" />
     <ClCompile Include="src\scene_nicomedes.cpp" />
     <ClCompile Include="src\scene_primitives.cpp" />
+    <ClCompile Include="src\scene_sphere.cpp" />
+    <ClCompile Include="src\scene_vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Math\Math.vcxproj">
@@ -71,10 +76,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\scene.h" />
+    <ClInclude Include="include\scene_circle.h" />
+    <ClInclude Include="include\scene_circle_grid.h" />
     <ClInclude Include="include\scene_compatibility.h" />
+    <ClInclude Include="include\scene_fragment.h" />
     <ClInclude Include="include\scene_manager.h" />
     <ClInclude Include="include\scene_nicomedes.h" />
     <ClInclude Include="include\scene_primitives.h" />
+    <ClInclude Include="include\scene_sphere.h" />
+    <ClInclude Include="include\scene_vertex.h" />
     <ClInclude Include="src\scene_cartoon.h" />
   </ItemGroup>
   <ItemGroup>

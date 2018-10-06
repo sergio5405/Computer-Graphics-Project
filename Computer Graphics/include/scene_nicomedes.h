@@ -2,8 +2,7 @@
 
 #include "scene.h"
 #include "vec2.h"
-#include <vector>
-
+#include <vector>..
 
 class scene_nicomedes : public scene {
 public:
@@ -20,7 +19,7 @@ public:
 	void specialKeys(int key) {}
 	void passiveMotion(int x, int y) {}
 	int npoints = 0;
-	int chaikinIter = 10;
+	int chaikinIter =10;
 
 private:
 	GLuint vao;

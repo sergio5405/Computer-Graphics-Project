@@ -6,7 +6,8 @@
 
 #include "scene.h"
 
-class scene_manager{
+class scene_manager
+{
 public:
 	static void start(int argc, char* argv[], const std::string& name, int width, int height);
 

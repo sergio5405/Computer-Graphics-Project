@@ -2,21 +2,21 @@
 
 #include "scene.h"
 
-class scene_primitives : public scene
-{
+class scene_sphere : public scene {
 public:
+	~scene_sphere();
+
 	void init();
 	void awake();
 	void sleep();
 	void reset() { }
 	void mainLoop();
-	void resize(int width, int height) { }
-	void normalKeysDown(unsigned char key) { }
-	void normalKeysUp(unsigned char key) { }
+	void resize(int width, int height);
+	void normalKeysDown(unsigned char) { }
+	void normalKeysUp(unsigned char) { }
 	void specialKeys(int key) { }
 	void passiveMotion(int x, int y) { }
 
 private:
-	GLuint vao;
-	GLuint positionsVBO;
+	GLuint shader_program;
 };
