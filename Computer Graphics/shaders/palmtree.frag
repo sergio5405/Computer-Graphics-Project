@@ -5,8 +5,7 @@ out vec4 FragColor;
 uniform vec2 iResolution;
 uniform float iTime;
 
-void main()
-{
+void main(){
     vec2 p = gl_FragCoord.xy / iResolution.xy;
     vec2 q = p - vec2(0.35, 0.7);
     

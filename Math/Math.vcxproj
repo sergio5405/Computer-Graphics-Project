@@ -56,7 +56,7 @@
     <ClInclude Include="include\vec2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="include\mat4.cpp" />
+    <ClCompile Include="src\mat4.cpp" />
     <ClCompile Include="include\vec3.h" />
     <ClCompile Include="include\vec4.h" />
     <ClCompile Include="src\complex.cpp" />

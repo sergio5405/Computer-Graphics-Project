@@ -8,8 +8,7 @@ scene_vertex::~scene_vertex(){
 	glDeleteProgram(shader_program);
 }
 
-void scene_vertex::init()
-{
+void scene_vertex::init(){
 	ifile shader_file;
 	shader_file.read("shaders/grid.vert");
 	std::string vertex_source = shader_file.get_contents();

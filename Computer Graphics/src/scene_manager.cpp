@@ -12,6 +12,7 @@
 #include "scene_circle_grid.h"
 #include "scene_sphere.h"
 #include "scene_circle.h"
+#include "scene_cube.h"
 #include "time.h"
 
 std::vector<std::unique_ptr<scene>> scene_manager::sceneList;
@@ -99,6 +100,9 @@ void scene_manager::initialize()
 
 	std::unique_ptr<scene> scene6(new scene_circle);
 	sceneList.push_back(std::move(scene6));
+
+	std::unique_ptr<scene> scene7(new scene_cube);
+	sceneList.push_back(std::move(scene7));
 
 	for (auto& s : sceneList)
 		s->init();

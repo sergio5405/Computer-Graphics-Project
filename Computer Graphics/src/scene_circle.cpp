@@ -21,7 +21,7 @@ void scene_circle::init() {
 		nullptr);
 	glCompileShader(vertex_shader);
 
-	shader_file.read("shaders/Default.frag");
+	shader_file.read("shaders/circleColor.frag");
 	std::string fragment_source = shader_file.get_contents();
 	const GLchar* fragment_source_c = (const GLchar*)
 		fragment_source.c_str();

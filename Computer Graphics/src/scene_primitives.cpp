@@ -3,8 +3,7 @@
 #include "vec2.h"
 #include <vector>
 
-void scene_primitives::init()
-{
+void scene_primitives::init(){
 	std::vector<cgmath::vec2> positions;
 	positions.push_back(cgmath::vec2(0.0f, 0.0f));
 	positions.push_back(cgmath::vec2(-1.0f, 0.0f));

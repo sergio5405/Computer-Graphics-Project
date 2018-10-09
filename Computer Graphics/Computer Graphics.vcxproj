@@ -65,6 +65,7 @@
     <ClCompile Include="src\scene_primitives.cpp" />
     <ClCompile Include="src\scene_sphere.cpp" />
     <ClCompile Include="src\scene_vertex.cpp" />
+    <ClCompile Include="src\scene_cube.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Math\Math.vcxproj">
@@ -75,7 +76,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\vmath.h" />
+    <ClInclude Include="include\scene_cube.h" />
     <ClInclude Include="include\scene.h" />
+    <ClInclude Include="include\scene_cartoon.h" />
     <ClInclude Include="include\scene_circle.h" />
     <ClInclude Include="include\scene_circle_grid.h" />
     <ClInclude Include="include\scene_compatibility.h" />
@@ -88,6 +92,17 @@
     <ClInclude Include="src\scene_cartoon.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="shaders\circle.vert" />
+    <None Include="shaders\circleColor.frag" />
+    <None Include="shaders\circleColored.vert" />
+    <None Include="shaders\circle_grid.vert" />
+    <None Include="shaders\cube.vert" />
+    <None Include="shaders\cubeColors.frag" />
+    <None Include="shaders\Default.frag" />
+    <None Include="shaders\Default.vert" />
+    <None Include="shaders\grid.vert" />
+    <None Include="shaders\palmtree.frag" />
+    <None Include="shaders\sphere.vert" />
     <None Include="src\maxPoints.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

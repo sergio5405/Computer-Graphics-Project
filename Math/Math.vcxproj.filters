@@ -50,7 +50,7 @@
     <ClCompile Include="src\mat3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\mat4.cpp">
+    <ClCompile Include="src\mat4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
