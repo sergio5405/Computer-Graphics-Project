@@ -9,18 +9,25 @@ out vec4 FragColor;
 uniform vec3 LightPosition;
 uniform vec3 CameraPosition;
 
+in vec2 TexCoords;
+
+uniform sampler2D PigTex;
+uniform sampler2D CrateTex;
+
 void main(){
 	vec3 LightToPixel = normalize(LightPosition-PixelPosition.xyz);
 	float dotPr = dot(normalize(PixelNormal),LightToPixel);
 	float diffuse = clamp(dotPr, 0.0f, 1.0f);
 
-	vec3 R = normalize(reflect(-LightToPixel, PixelNormal));
+	vec3 ref = normalize(reflect(-LightToPixel, PixelNormal));
 	vec3 pixToCam = normalize(CameraPosition - PixelPosition.xyz);
-	float dotEspecu = dot(normalize(R),pixToCam);
+	float dotEspecu = dot(normalize(ref),pixToCam);
 	float specular = clamp(dotEspecu, 0.0f, 1.0f);
 
-	vec3 phong = (diffuse + specular) * FaceColor;
+	vec4 pigV = texture2D(PigTex, TexCoords);
+	vec4 crateV = texture2D(CrateTex, TexCoords);
 
+	vec4 R = mix(pigV, crateV, 0.5f);
 	
-	FragColor = vec4(phong, 1.0);
+	FragColor = (diffuse + specular) * R;
 }
