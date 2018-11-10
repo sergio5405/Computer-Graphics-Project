@@ -1,6 +1,7 @@
 #pragma once
 
 #include <GL/glew.h>
+#include <IL/il.h>
 
 // Scene is an abstract class.
 class scene

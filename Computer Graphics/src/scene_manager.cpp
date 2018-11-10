@@ -13,13 +13,15 @@
 #include "scene_sphere.h"
 #include "scene_circle.h"
 #include "scene_cube.h"
+#include "scene_phong.h"
+#include "scene_texture.h"
 #include "time.h"
+#include <IL/il.h>
 
 std::vector<std::unique_ptr<scene>> scene_manager::sceneList;
 int scene_manager::currentScene = -1;
 
-void scene_manager::start(int argc, char* argv[], const std::string& name, int width, int height)
-{
+void scene_manager::start(int argc, char* argv[], const std::string& name, int width, int height){
 	// Time init
 	time::init();
 
@@ -48,6 +50,11 @@ void scene_manager::start(int argc, char* argv[], const std::string& name, int w
 	glCullFace(GL_BACK);
 	// GL version
 	std::cout << glGetString(GL_VERSION) << std::endl;
+
+	//DevIL init
+	ilInit();
+	ilEnable(IL_ORIGIN_SET);
+	ilOriginFunc(IL_ORIGIN_LOWER_LEFT);
 
 	// Scene init
 	initialize();
@@ -86,23 +93,11 @@ void scene_manager::initialize()
 	//std::unique_ptr<scene> somescene(new scene_project);
 	//sceneList.push_back(std::move(somescene));
 
-	std::unique_ptr<scene> scene2(new scene_circle_grid);
-	sceneList.push_back(std::move(scene2));
+	std::unique_ptr<scene> scenephong(new scene_phong);
+	sceneList.push_back(std::move(scenephong));
 
-	std::unique_ptr<scene> scene3(new scene_vertex);
-	sceneList.push_back(std::move(scene3));
-
-	//std::unique_ptr<scene> scene4(new scene_fragment);
-	//sceneList.push_back(std::move(scene4));
-
-	std::unique_ptr<scene> scene5(new scene_sphere);
-	sceneList.push_back(std::move(scene5));
-
-	std::unique_ptr<scene> scene6(new scene_circle);
-	sceneList.push_back(std::move(scene6));
-
-	std::unique_ptr<scene> scene7(new scene_cube);
-	sceneList.push_back(std::move(scene7));
+	std::unique_ptr<scene> scenetex(new scene_texture);
+	sceneList.push_back(std::move(scenetex));
 
 	for (auto& s : sceneList)
 		s->init();

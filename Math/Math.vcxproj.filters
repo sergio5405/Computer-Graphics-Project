@@ -27,6 +27,9 @@
     <ClInclude Include="include\mat4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cgmath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\complex.cpp">

@@ -48,8 +48,12 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\include\</AdditionalIncludeDirectories>
     </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\cgmath.h" />
     <ClInclude Include="include\complex.h" />
     <ClInclude Include="include\mat3.h" />
     <ClInclude Include="include\mat4.h" />

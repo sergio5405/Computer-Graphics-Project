@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -54,7 +54,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\complex.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\mat3.cpp" />
+    <ClCompile Include="src\mat4.cpp" />
     <ClCompile Include="src\scene_cartoon.cpp" />
     <ClCompile Include="src\scene_circle.cpp" />
     <ClCompile Include="src\scene_circle_grid.cpp" />
@@ -62,10 +65,15 @@
     <ClCompile Include="src\scene_fragment.cpp" />
     <ClCompile Include="src\scene_manager.cpp" />
     <ClCompile Include="src\scene_nicomedes.cpp" />
+    <ClCompile Include="src\scene_phong.cpp" />
     <ClCompile Include="src\scene_primitives.cpp" />
     <ClCompile Include="src\scene_sphere.cpp" />
+    <ClCompile Include="src\scene_texture.cpp" />
     <ClCompile Include="src\scene_vertex.cpp" />
     <ClCompile Include="src\scene_cube.cpp" />
+    <ClCompile Include="src\vec2.cpp" />
+    <ClCompile Include="src\vec3.cpp" />
+    <ClCompile Include="src\vec4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Math\Math.vcxproj">
@@ -76,6 +84,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\cgmath.h" />
+    <ClInclude Include="include\complex.h" />
+    <ClInclude Include="include\mat3.h" />
+    <ClInclude Include="include\mat4.h" />
+    <ClInclude Include="include\scene_phong.h" />
+    <ClInclude Include="include\scene_texture.h" />
+    <ClInclude Include="include\vec2.h" />
+    <ClInclude Include="include\vec3.h" />
+    <ClInclude Include="include\vec4.h" />
     <ClInclude Include="include\vmath.h" />
     <ClInclude Include="include\scene_cube.h" />
     <ClInclude Include="include\scene.h" />
@@ -98,12 +115,19 @@
     <None Include="shaders\circle_grid.vert" />
     <None Include="shaders\cube.vert" />
     <None Include="shaders\cubeColors.frag" />
+    <None Include="shaders\cubeColorsTex.frag" />
+    <None Include="shaders\cubeTex.vert" />
     <None Include="shaders\Default.frag" />
     <None Include="shaders\Default.vert" />
     <None Include="shaders\grid.vert" />
     <None Include="shaders\palmtree.frag" />
     <None Include="shaders\sphere.vert" />
     <None Include="src\maxPoints.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\crate.png" />
+    <Image Include="images\floor.jpg" />
+    <Image Include="images\pig.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
